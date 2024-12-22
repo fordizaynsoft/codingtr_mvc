@@ -1,0 +1,69 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+html {
+    font-size: 14px;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.custom-container {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+.section-title {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(224, 224, 224, 0.6);
+}
+.space{
+    margin-top:5px;
+}
+
+@media (max-width: 1920px) {
+    .custom-container {
+        padding-left: 18%;
+        padding-right: 18%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .custom-container {
+        padding-left: 9%;
+        padding-right: 9%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .custom-container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+@media (max-width: 900px) {
+    .custom-container {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+}

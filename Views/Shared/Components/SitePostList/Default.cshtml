@@ -1,0 +1,158 @@
+﻿@model List<Post>
+
+<div class="">
+
+    @*  <div class="post-item">
+    <img src="~/images/posts/@item.ImageFile" />
+    <p>@item.Category.Name</p>
+    <p>@item.Title</p>
+    <span>@item.Description</span>
+    <div>@item.Content</div>
+    </div> *@
+
+    @foreach (var item in ViewBag.BlogPosts)
+    {
+
+
+
+        <div class="border border-hover-primary p-0 rounded mb-7 post-list-section">
+            <div class="d-flex flex-stack p-5">
+                <div class="d-flex">
+                    <div class="symbol symbol-circle symbol-45px">
+                        <img src="assets/media/avatars/300-20.jpg" alt="" />
+                    </div>
+                    <div class="ms-5">
+                        <div class="d-flex align-items-center">
+                            <a href="../../demo1/dist/pages/user-profile/overview.html" class="text-dark fw-bolder text-hover-primary fs-5 me-4">Emma Smith</a>
+                            <span class="badge badge-light-success d-flex align-items-center fs-8 fw-bold">
+                                <span class="svg-icon svg-icon-8 svg-icon-success me-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M11.1359 4.48359C11.5216 3.82132 12.4784 3.82132 12.8641 4.48359L15.011 8.16962C15.1523 8.41222 15.3891 8.58425 15.6635 8.64367L19.8326 9.54646C20.5816 9.70867 20.8773 10.6186 20.3666 11.1901L17.5244 14.371C17.3374 14.5803 17.2469 14.8587 17.2752 15.138L17.7049 19.382C17.7821 20.1445 17.0081 20.7069 16.3067 20.3978L12.4032 18.6777C12.1463 18.5645 11.8537 18.5645 11.5968 18.6777L7.69326 20.3978C6.99192 20.7069 6.21789 20.1445 6.2951 19.382L6.7248 15.138C6.75308 14.8587 6.66264 14.5803 6.47558 14.371L3.63339 11.1901C3.12273 10.6186 3.41838 9.70867 4.16744 9.54646L8.3365 8.64367C8.61089 8.58425 8.84767 8.41222 8.98897 8.16962L11.1359 4.48359Z" fill="currentColor" />
+                                    </svg>
+                                </span>
+                                Author
+                            </span>
+                        </div>
+
+                        <span class="text-muted fw-bold mb-3">Art Director</span>
+                    </div>
+                </div>
+
+                <div clas="d-flex">
+                    <div class="text-end pb-3">
+                        <span class="text-dark fw-bolder fs-5">$75.60</span>
+                        <span class="text-muted fs-7">/hr</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-0">
+
+                <div class="d-flex flex-column p-4">
+                    <p class="text-gray-700 fw-bold fs-6 mb-4">@item.Title</p>
+                    <div class="d-flex text-gray-700 fw-bold fs-7">
+                        <span class="border border-2 rounded me-3 p-1 px-2">Art Director</span>
+                        <span class="border border-2 rounded me-3 p-1 px-2">UX</span>
+                        <span class="border border-2 rounded me-3 p-1 px-2">Laravel</span>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column">
+                    <div class="post-item">
+                        <img src="~/images/posts/@item.ImageFile" />
+                    </div>
+
+
+                
+              @*       <div class="d-flex flex-stack p-5 ">
+                        <div class="d-flex flex-column mw-200px">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="text-gray-700 fs-6 fw-bold me-2">90%</span>
+                                <span class="text-muted fs-8">Job Success</span>
+                            </div>
+                            <div class="progress h-6px w-200px">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-primary">Select</a>
+                    </div> *@
+                </div>
+            </div>
+        </div>
+
+
+
+    }
+
+
+
+    @foreach (var item in ViewBag.JobPosts)
+    {
+        <div class="post-item">
+            <p>@item.Category.Name</p>
+            <p>@item.Title</p>
+            <span>@item.Description</span>
+            <div>@item.Content</div>
+        </div>
+    }
+
+
+    @foreach (var item in ViewBag.EventPosts)
+    {
+        <div class="post-item">
+            <img src="~/images/posts/@item.ImageFile" />
+            <p>@item.Category.Name</p>
+            <p>@item.Title</p>
+            <span>@item.Description</span>
+            <div>@item.Content</div>
+        </div>
+    }
+</div>
+
+
+<style>
+    .post-item p {
+        font-weight: 600;
+    }
+
+    .post-item span {
+        font-weight: 500;
+        color: gray;
+    }
+
+    .post-item div {
+        font-weight: 400;
+    }
+
+
+    .post-item {
+        margin-bottom: 30px;
+        margin-top: 30px;
+       
+        padding-bottom: 0px;
+    }
+
+        .post-item img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 0px;
+            margin-top: -25px;
+        }
+
+    .post-list-section {
+        padding: 20px;
+        background-color: white;
+        margin-top: 15px;
+        border-radius: 5px;
+        border: 1px solid rgba(224, 224, 224, 0.9);
+    }
+
+    .post-list-section:hover {
+    border:none;
+    }
+
+    .border-hover-primary:hover {
+        border-color:white;
+    }
+</style>

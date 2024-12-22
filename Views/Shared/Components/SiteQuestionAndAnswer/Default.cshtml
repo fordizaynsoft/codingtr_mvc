@@ -1,0 +1,110 @@
+﻿
+<div class="askand-question-section">
+    <div class="askand-question-header">
+        Soru ve Cevap Kategorisi
+    </div>
+    <div class="card-body pt-3 pb-4 askand-question-body">
+    <div class="table-responsive">
+        <table class="table table-row-dashed align-middle gs-0 gy-4 my-0">
+            <thead>
+                <tr class="fs-7 fw-bolder text-gray-500 border-bottom-0">
+                    <th class="p-0 min-w-450px"></th>
+                    <th class="p-0 min-w-70px"></th>
+                    <th class="p-0 min-w-75px"></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                  @foreach (var item in ViewBag.QuestionAndAnswerPosts)
+                {
+
+                    <tr>
+                        <td class="">
+                            <div class="d-flex align-items-center">
+                                <div class="symbol symbol- symbol-30px me-3">
+                                        <img class="userImage" src="https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" class="" alt="" />
+                                </div>
+                                <div class="d-flex justify-content-start flex-column">
+                                    <div class="d-flex flex-column">
+                                     
+                                        <div class="d-flex align-items-center mb-2 ">
+                                                <a href="../../demo1/dist/apps/support-center/tickets/view.html" class="text-dark text-hover-primary fw-bolder fs-7 me-3 question">@item.Title</a>
+                                                                            
+                                        </div>                                   
+                                        <span class="question-subtitle">
+                                            By Keenthemes to save tons and more to time
+                                        </span>
+                                   
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                            <td class="table-td">
+                            <span class="text-gray-800 fw-bolder d-block mb-1 fs-8"> 240</span>
+                                <span class="fw-bold text-gray-400 d-block  fs-8 question">Cevaplar</span>
+                        </td>
+                            <td class="text-end table-td">
+                            <a href="#" class="text-gray-800 fw-bolder text-hover-primary d-block mb-1 fs-8">5dk önce</a>
+                                <span class="text-gray-400 fw-bold d-block fs-8 question">ahmetbto</span>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+</div>
+
+
+
+
+<style>
+    .question-subtitle{
+        color: #141414;
+        font-weight:500;
+        font-size:.9rem;
+        margin-top:-4px;
+    }
+    .question{
+        color: #298FCB !important;
+    }
+    .askand-question-body{
+        background-color: #FAFAFF;
+    }
+    .table-td{
+    
+    }
+    .userImage{
+        border-radius:50%;
+        object-fit:cover;
+    }
+    .askand-question-header{
+        background-color: #2577B1;
+        padding:7px 12px;
+        color:white;
+        font-weight:500;
+        font-weight:500;
+    }
+    .askand-question-section {
+        background-color: white;
+        margin-top: 20px;
+        border: 1px solid rgba(224, 224, 224, 0.6);
+    }
+
+    .askand-question-item {
+        background-color: antiquewhite;
+        margin-top: 4px;
+        display: flex;
+        padding: 5px;
+    }
+
+    .table.table-row-dashed tr {
+        border-bottom:1px solid #eff2f5;
+    
+       
+    }
+</style>
+

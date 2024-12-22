@@ -1,0 +1,75 @@
+﻿
+<div class="section-box">
+    <p class="section-title">Gruplarınız</p>
+
+    @foreach (var item in ViewBag.Groups)
+    {
+        <div class="d-flex group-item">
+            <div class="symbol symbol-circle symbol-35px">
+                <img src="assets/media/avatars/300-20.jpg" alt="" />
+            </div>
+            <div class="ms-3">
+                <div class="d-flex align-items-center">
+                    <a href="../../demo1/dist/pages/user-profile/overview.html" class="text-dark fw-bold text-hover-primary fs-8 me-2">@item.Name</a>
+               
+                </div>
+
+                <span class="text-muted fw-bold fs-8 mb-3">Art Director</span>
+            </div>
+        </div>
+
+   
+
+    }
+
+
+ 
+</div>
+
+<style>
+    .group-item {
+        border-bottom: 1px solid rgba(224, 224, 224, 0.6);
+        min-height:50px;
+        padding:7px 2px;
+     
+    }
+
+    .section-box{
+        padding:0 8px;
+    }
+    .group-box {
+        border-radius: 3px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        padding:7px 3px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px -1px, rgba(0, 0, 0, 0.02) 0px 2px 4px -1px;
+       
+    }
+
+    .section-box img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+    .group-info {
+        padding: 0px;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+        .group-info p {
+            font-weight: 600;
+        }
+
+        .group-info span {
+            margin-top: -10px;
+            color: gray;
+            margin-top: -15px;
+        }
+</style>

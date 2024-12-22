@@ -1,0 +1,42 @@
+﻿<div class="card card-xl-stretch mb-xl-8">
+    <div class="card-header border-0">
+        <h3 class="card-title fw-bolder text-dark">Populer Gönderiler</h3>
+    </div>
+
+    <div class="card-body pt-2">
+
+
+        @foreach (var item in ViewBag.PopulerPostsList)
+        {
+            <div class="d-flex align-items-center mb-8 post-item-small">
+                <img src="./images/posts/@item.ImageFile" />
+                <div class="flex-grow-1">
+                    <a href="#" class="text-gray-800 text-hover-primary fw-bolder fs-7">
+                        @(item.Title != null
+                            ? (item.Title.Length > 20
+                            ? item.Title.Substring(0, 30) + "..."
+                            : item.Title)
+                            : "")
+                    </a>
+                    <span class="text-muted fw-bold d-block fs-8">Due in 2 Days</span>
+                </div>
+            </div>
+
+        }
+
+
+
+
+    </div>
+
+</div>
+
+<style>
+    .post-item-small img {
+        width: 48px !important;
+        height: 45px !important;
+        object-fit: cover;
+        margin-right: 10px;
+        border-radius: 4px;
+    }
+</style>

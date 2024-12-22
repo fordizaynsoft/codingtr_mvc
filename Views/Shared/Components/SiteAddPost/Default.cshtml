@@ -1,0 +1,270 @@
+﻿@model Post
+
+  @if (User.Identity!.IsAuthenticated)
+{
+    <div id="vueapp">
+
+
+
+        <div class="section">
+            <div class="new-post-section">
+
+
+                <a href="#" class="btn-homepage">Anasayfa</a>
+                <a href="#" class="btn-link">Favorilerim</a>
+                <a href="#" class="btn-link">Gruplar</a>
+            </div>
+            <div class="post-section">
+                <p>Yeni Post Ekle</p>
+                <div class="new-post-box">
+                    <img class="pen" src="./images/pen.png" />
+                    <input readonly type="text" class="new-post-input" placeholder="Yeni Post Ekle" data-bs-toggle="modal" data-bs-target="#kt_modal_add_customer" />
+                </div>
+
+                @*     <div class="new-post-bottom-btns">
+                <span>Gönderi: 168</span>
+                <span>Takipçi: 326</span>
+                <span>Takip Edilen: 94</span>
+                <span>Favori: 60</span>
+            </div> *@
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <div class="modal fade" id="kt_modal_add_customer" tabindex="-1" aria-hidden="true">
+            <!--begin::Modal dialog-->
+            <div class="modal-dialog modal-dialog-centered mw-650px">
+                <!--begin::Modal content-->
+                <div class="modal-content">
+                    <!--begin::Form-->
+                    <!--begin::Modal header-->
+                    <div class="modal-header" id="kt_modal_add_customer_header">
+                        <!--begin::Modal title-->
+                        <h2 class="fw-bolder">Yeni Yazı Ekle</h2>
+                        <!--end::Modal title-->
+                        <!--begin::Close-->
+                        <div id="kt_modal_add_customer_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                            <span class="svg-icon svg-icon-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
+                                    <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                        </div>
+
+
+                        <!--end::Close-->
+                    </div>
+                    <!--end::Modal header-->
+                    <!--begin::Modal body-->
+                    <div class="modal-body py-10 px-lg-17">
+                        <form asp-controller="Post" asp-action="CreatePost" method="post" enctype="multipart/form-data">
+
+                            <div class="scroll-y me-n7 pe-7" id="kt_modal_add_customer_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_customer_header" data-kt-scroll-wrappers="#kt_modal_add_customer_scroll" data-kt-scroll-offset="300px">
+                                <!--begin::Input group-->
+                                <div class="form-group mb-0">
+                                    <label class="required fs-6 fw-bold mb-2">Kategoru Seçimi </label>
+
+                                    <select v-model="selectedCategoryID" asp-for="CategoryId" asp-items="ViewBag.Category" class="js-basic-single form-control">
+                                    </select>
+                                </div>
+                                <div v-if="selectedCategoryID==2 || selectedCategoryID==3 || selectedCategoryID==5" class="image">
+                                    <div class="form-group">
+                                        <input type="file" class="form-control" id="imageFile" name="imageFile" placeholder="Resim Seçiniz">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="fv-row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="required fs-6 fw-bold mb-2">Başlık</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input asp-for="Title" type="text" class="form-control form-control-solid" placeholder="" />
+                                    <!--end::Input-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="fv-row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="fs-6 fw-bold mb-2">
+                                        <span class="required">Açıklama</span>
+                                        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Email address must be active"></i>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input type="text" asp-for="Description" class="form-control form-control-solid" placeholder="" />
+                                    <!--end::Input-->
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div class="fv-row mb-15">
+                                    <!--begin::Label-->
+                                    <label class="fs-6 fw-bold mb-2">İçerik Yazısı</label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <textarea rows="4" cols="50" asp-for="Content" class="form-control form-control-solid" placeholder=""></textarea>
+                                    <!--end::Input-->
+                                </div>
+                                <button type="submit" class="btn btn-primary">Post Ekle</button>
+                            </div>
+
+                        </form>
+
+
+                    </div>
+
+
+                    <!--end::Form-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+<script>
+    const { createApp, ref } = Vue
+
+    createApp({
+        setup() {
+            const message = ref('Hello vue!')
+            const selectedCategoryID = ref(3)
+            return {
+                message, selectedCategoryID
+
+            }
+        }
+    }).mount('#vueapp')
+</script>
+
+
+<style>
+    .btn-homepage {
+        background-color: #088DCD;
+        padding: 5px 13px;
+        margin-right: 5px;
+        color: white;
+        border-radius: 4px;
+        font-weight: 600;
+        outline: none;
+    }
+
+        .btn-homepage:hover {
+            background-color: #055479;
+            color: white;
+        }
+
+    .btn-link {
+        background-color: rgba(220, 220, 220,.5);
+        padding: 5px 13px;
+        margin-right: 5px;
+        color: #3a8cca;
+        border-radius: 4px;
+        font-weight: 600;
+    }
+
+        .btn-link:hover {
+            background-color: rgba(220, 220, 220,.9);
+     
+    }
+    .new-post-box {
+        display: flex;
+    }
+
+        .new-post-box img {
+            position: absolute;
+            margin-left: 20px;
+            margin-top: 7px;
+            width: 20px;
+            height: 20px;
+        }
+
+    .new-post-bottom-btns span {
+        margin-right: 10px;
+        font-weight: 400;
+        background-color: rgb(239, 241, 250);
+        padding: 2px 5px;
+        color: black;
+        border-radius: 2px;
+        min-width: 70px !important;
+        text-align: center;
+        display: inline-block;
+        font-size: 10px;
+    }
+
+    .new-post-bottom-btns {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .new-post-input::placeholder {
+        color: rgba(117, 117, 117,.7);
+        padding-left: 2px;
+    }
+
+    .new-post-input :focus {
+        background-color: antiquewhite;
+    }
+
+    .new-post-input {
+        outline: none;
+        width: 100%;
+        border-radius: 18px;
+        border: 1px solid rgba(224, 224, 224, 0.6);
+        height: 36px;
+        padding-left: 50px;
+    }
+
+    .new-post-input:hover{
+        cursor:pointer;
+    }
+
+    .post-section {
+        background-color: rgba(242, 242, 242,.4);
+        margin: 0px;
+        margin-top: 17px;
+        padding: 10px;
+        padding-bottom:25px;
+        border-radius: 5px;
+        border: 1px solid rgba(224, 224, 224, 0.2);
+        border-top: 1px solid rgba(224, 224, 224, 0.3);
+        border-bottom: 5px solid rgba(224, 224, 224, 0.3);
+    }
+
+        .post-section p {
+            font-weight: 600;
+            margin-left: 15px;
+        }
+
+    .section {
+        background-color: white;
+        padding: 0px;
+        padding-top: 10px;
+        border-radius: 5px;
+    }
+
+    .new-post-section {
+   margin:7px;
+        font-size: .8rem;
+      
+    }
+
+    .new-post-section a{
+   ;
+        height: 33px;
+            padding: 7px 10px;
+    }
+    .js-basic-single {
+        margin-bottom: 15px;
+    }
+</style>
+
+
+

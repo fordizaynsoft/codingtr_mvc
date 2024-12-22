@@ -1,0 +1,72 @@
+﻿<div class="section-box developmentTopics">
+
+      @*  <div class="card-header pt-7 mb-5">
+            <h3 class="card-title align-items-start flex-column">
+                <span class="card-label fw-bolder text-gray-800">Kategoriler</span>
+                <span class="text-gray-400 mt-1 fw-bold fs-7">20 countries share 97% visits</span>
+            </h3>
+        </div> *@
+
+    <span class="fs-6 fw-boldest text-gray-800 d-block mb-2">Geliştirici Alanları</span>
+    <span class="text-gray-400 mt-1 fw-bold fs-7">20 countries share 97% visits</span>
+
+
+    <div class="menu menu-column menu-rounded menu-state-bg menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary mb-10">
+
+        @foreach (var item in ViewBag.DevelopmentTopics)
+        {
+
+            <div class="menu-item">
+
+                <span class="menu-link">
+                    <span class="menu-icon">
+
+                        <span class="svg-icon svg-icon-2 me-3 icon">
+                            <img src="~/images/right-icon.png" />
+                        </span>
+
+                    </span>
+                    <span class="menu-title">@item.Name</span>
+                    <span class="badge badge-light-primary">3</span>
+                </span>
+
+            </div>
+        }
+
+
+
+
+
+
+    </div>
+</div>
+
+
+<style>
+    .developmentTopics{
+        background-color: rgb(252, 252, 253);
+    }
+    .menu-title {
+        margin-left: -10px !important;
+        margin-top: 2px !important;
+        display: inline-block;
+        font-weight: 500;
+        color:gray;
+    
+    }
+
+    .icon img {
+        width: 11px !important;
+        height: 11px !important;
+    }
+
+    .section-box {
+        padding: 25px !important;
+     
+    }
+
+    .menu-item{
+        height:30px;
+       
+    }
+</style>

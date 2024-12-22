@@ -1,0 +1,45 @@
+﻿
+<div class="d-flex flex-column section-box">
+
+    <span class="fs-6 fw-boldest text-gray-800 d-block mb-2">Yeni Üyelerimiz</span>
+
+ @*    @foreach (var item in ViewBag.LastUserList)
+    {
+        @item.Name
+    } *@
+
+    <div class="symbol-group symbol-hover flex-wrap">
+        <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Alan Warden">
+            <span class="symbol-label bg-warning text-inverse-warning fw-bolder">A</span>
+        </div>
+        <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Michael Eberon">
+            <img alt="Pic" src="assets/media/avatars/300-11.jpg" />
+        </div>
+        <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Susan Redwood">
+            <span class="symbol-label bg-primary text-inverse-primary fw-bolder">S</span>
+        </div>
+        <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
+            <img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+        </div>
+        <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Perry Matthew">
+            <span class="symbol-label bg-danger text-inverse-danger fw-bolder">P</span>
+        </div>
+        <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
+            <img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+        </div>
+        <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Perry Matthew">
+            <span class="symbol-label bg-danger text-inverse-danger fw-bolder">P</span>
+        </div>
+        <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Barry Walter">
+            <img alt="Pic" src="assets/media/avatars/300-12.jpg" />
+        </div>
+        <div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Melody Macy">
+            <img alt="Pic" src="assets/media/avatars/300-2.jpg" />
+        </div>
+
+        <a href="#" class="symbol symbol-35px symbol-circle" data-bs-toggle="modal" data-bs-target="#kt_modal_view_users">
+            <span class="symbol-label bg-light text-gray-400 fs-8 fw-bolder">+@ViewBag.LastUserListCount</span>
+        </a>
+    </div>
+
+</div>

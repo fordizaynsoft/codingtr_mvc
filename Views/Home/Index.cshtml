@@ -1,0 +1,145 @@
+﻿@{
+    Layout = null;
+}
+
+@* Açılış Sayfası buradan başlamaktadır. *@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - codingtr</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/codingtr.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Page Vendor Stylesheets(used by this page)-->
+    <link href="assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Page Vendor Stylesheets-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!--end::Global Stylesheets Bundle-->
+    <link href="~/css/homepage.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-qrtr.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+
+    <div class="custom-container site-header">
+
+        @await Component.InvokeAsync("SiteHeader")
+
+
+    </div>
+
+    <div class="custom-container mainpage-content-section">
+        <div class="row">
+            <div class="col-md-2-3qtr">
+                <div class="section">
+
+                    @await Component.InvokeAsync("SiteCategoryMenu")
+                </div>
+                <div class="section">
+                    @await Component.InvokeAsync("SiteDevelopmentTopics")
+                </div>
+
+                <div class="section">
+                    @await Component.InvokeAsync("SitePopularPosts")
+
+                </div>
+
+
+
+            </div>
+            <div class="col-md-6-3qtr">
+                <div class="middle-section">
+                    @await Component.InvokeAsync("SiteAddPost")
+                    @await Component.InvokeAsync("SiteProjectPostList")
+                    @await Component.InvokeAsync("SiteQuestionAndAnswer")
+                    @await Component.InvokeAsync("SitePostList")
+
+                </div>
+
+            </div>
+            <div class="col-md-2-half">
+
+                <div class="section">
+                    @await Component.InvokeAsync("SiteGroups")
+                </div>
+
+
+                <div class="section">
+                    @await Component.InvokeAsync("SiteNewMembers")
+                </div>
+                <div class="section">
+                    @await Component.InvokeAsync("SiteLastJobPosts")
+                </div>
+                <div class="section">
+                    @await Component.InvokeAsync("SiteLastEvents")
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>var hostUrl = "assets/";</script>
+    <!--begin::Global Javascript Bundle(used by all pages)-->
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
+    <script src="assets/js/scripts.bundle.js"></script>
+    <!--end::Global Javascript Bundle-->
+    <!--begin::Page Vendors Javascript(used by this page)-->
+    <script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <!--end::Page Vendors Javascript-->
+    <!--begin::Page Custom Javascript(used by this page)-->
+    <script src="assets/js/widgets.bundle.js"></script>
+    <script src="assets/js/custom/widgets.js"></script>
+    <script src="assets/js/custom/apps/chat/chat.js"></script>
+    <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+    <script src="assets/js/custom/utilities/modals/create-app.js"></script>
+    <script src="assets/js/custom/utilities/modals/users-search.js"></script>
+
+
+
+
+
+    <script>
+        const { createApp, ref } = Vue
+
+        createApp({
+            setup() {
+                const message = ref('Hello vue!')
+                return {
+                    message
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
