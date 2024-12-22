@@ -14,7 +14,7 @@ namespace codingtr.Models
         public string? Surname { get; set; }
 
         [Required(ErrorMessage = "Zorunlu Alan")]
-        [Display(Name = "EMail")]
+        [Display(Name = "E-Mail")]
         public string? Email { get; set; }
         public string? UserRole { get; set; }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\PROJELER\\Codingtr\\.NetCore\\codingtr\\codingtr.csproj": {}
+    "E:\\Coodingtr\\.Net Core\\codingtr_mvc\\codingtr.csproj": {}
   },
   "projects": {
-    "E:\\PROJELER\\Codingtr\\.NetCore\\codingtr\\codingtr.csproj": {
+    "E:\\Coodingtr\\.Net Core\\codingtr_mvc\\codingtr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\PROJELER\\Codingtr\\.NetCore\\codingtr\\codingtr.csproj",
+        "projectUniqueName": "E:\\Coodingtr\\.Net Core\\codingtr_mvc\\codingtr.csproj",
         "projectName": "codingtr",
-        "projectPath": "E:\\PROJELER\\Codingtr\\.NetCore\\codingtr\\codingtr.csproj",
+        "projectPath": "E:\\Coodingtr\\.Net Core\\codingtr_mvc\\codingtr.csproj",
         "packagesPath": "C:\\Users\\ahmet\\.nuget\\packages\\",
-        "outputPath": "E:\\PROJELER\\Codingtr\\.NetCore\\codingtr\\obj\\",
+        "outputPath": "E:\\Coodingtr\\.Net Core\\codingtr_mvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ahmet\\AppData\\Roaming\\NuGet\\NuGet.Config",
